@@ -1,6 +1,6 @@
 
 <?php
-	$env = 'lokal'; // lokal atau online
+	$env = 'online'; // lokal atau online
 
 	if($env=='lokal'){
 		$host	 		= "localhost";
@@ -9,15 +9,18 @@
 		$dabname		= "accounting_db";
 		$base			= "http://localhost/project/koprasi/";
 	}else{
-		$host	 		= "localhost";
-		$user		 	= "root";
-		$pass	 		= "Otsuk@123!@#";
+		$host	 		= "151.106.119.249";
+		$user		 	= "deelabs_terabyte";
+		$pass	 		= "bismIll@h";
 
-		if($_SERVER['HTTP_HOST'] == 'dev.kopkarwb.com') {
-		    $dabname 	= "kopkarw1_2021_dev";
-		}else{
-		    $dabname 	= "kopkarw1_2021";
-		};
+		$dabname		= "deelabs_accounting_terabyte_db";
+
+		// if($_SERVER['HTTP_HOST'] == 'dev.kopkarwb.com') {
+		//     $dabname 	= "kopkarw1_2021_dev";
+		// }else{
+		//     $dabname 	= "kopkarw1_2021";
+		// };
+
 		$base			= "http://koperasiobs.otsuka.co.id/";
 	};
 
