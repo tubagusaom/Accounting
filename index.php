@@ -1,4 +1,28 @@
-<?php include "home/model/config/login.php"; ?>
+<?php
+  include "home/model/config/login.php";
+
+  if (isset($_SESSION['akses'])) {
+		$sessionakses = $_SESSION['akses'];
+	}else{
+		$sessionakses = '';
+		$_MODULE = [];
+		$akses = '';
+	}
+
+  $this_login->sesiOn($sessionakses,FALSE);
+
+  $arr_segmen = $this_url->get_url();
+  $segmen = explode ("&&",$arr_segmen);
+  // echo $segmen[0];
+
+  $aksesusr = $this_login->akses_user($_SESSION['akses']);
+
+	$basehomeurl = str_replace('home/','',base_url());
+
+  // echo $segmen[1];
+
+  // var_dump($arr_segmen); die();
+?>
 
 <head>
   <meta charset="UTF-8">

@@ -72,8 +72,16 @@ class Koneksi {
     $segmen = $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
     $inhome = in_array('home', $segmen);
 
+    // var_dump($akses); die();
+
     if ($getdata == '') {
       if ($datasesion > 0) {
+
+        if ($inhome == FALSE ) {
+          echo "<script type='text/javascript'>
+            window.location='".base_url()."/home'
+          </script>";
+        }
 
         $timeout = 30; // setting timeout dalam menit
       	$timeout = $timeout * 60; // menit ke detik
@@ -105,10 +113,13 @@ class Koneksi {
         // $segmen = $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         // $inhome = in_array('home', $segmen);
 
+        // var_dump($replaceurl); die();
+
         if ($inhome == 1) {
           echo "<script type='text/javascript'>
             window.location='".$replaceurl."'
           </script>";
+
         }
 
       }
